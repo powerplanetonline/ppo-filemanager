@@ -31,7 +31,7 @@
     Add service providers
 
     ```php
-        Powerplanetonline\Ppofilemanager\LaravelFilemanagerServiceProvider::class,
+        Powerplanetonline\PpoFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
     ```
 

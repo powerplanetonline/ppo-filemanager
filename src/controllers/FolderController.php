@@ -1,6 +1,6 @@
-<?php namespace Powerplanetonline\Ppofilemanager\controllers;
+<?php namespace Powerplanetonline\PpoFilemanager\controllers;
 
-use Powerplanetonline\Ppofilemanager\controllers\Controller;
+use Powerplanetonline\PpoFilemanager\controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Config;
@@ -8,7 +8,7 @@ use Lang;
 
 /**
  * Class FolderController
- * @package Powerplanetonline\Ppofilemanager\controllers
+ * @package Powerplanetonline\PpoFilemanager\controllers
  */
 class FolderController extends LfmController {
 

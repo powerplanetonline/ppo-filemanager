@@ -1,4 +1,4 @@
-<?php namespace Powerplanetonline\Ppofilemanager;
+<?php namespace Powerplanetonline\PpoFilemanager;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;
@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Config;
 
 /**
  * Class LaravelFilemanagerServiceProvider
- * @package Powerplanetonline\Ppofilemanager
+ * @package Powerplanetonline\PpoFilemanager
  */
 class LaravelFilemanagerServiceProvider extends ServiceProvider {
 

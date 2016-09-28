@@ -33,7 +33,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Unisharp\\Laravelfilemanager\\": "src/"
+      "Powerplanetonline\\PpoFilemanager\\": "src/"
     }
   }
 }

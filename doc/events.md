@@ -8,7 +8,7 @@
   1. [Upgrade](https://github.com/UniSharp/ppo-filemanager/blob/master/doc/upgrade.md)
 
 ## List of events
- * Powerplanetonline\Ppofilemanager\Events\ImageWasUploaded
+ * Powerplanetonline\PpoFilemanager\Events\ImageWasUploaded
 
 ## How to use
 

@@ -1,8 +1,8 @@
 <?php
-$middleware = array_merge(\Config::get('lfm.middlewares'), ['\Powerplanetonline\Ppofilemanager\middleware\MultiUser']);
+$middleware = array_merge(\Config::get('lfm.middlewares'), ['\Powerplanetonline\PpoFilemanager\middleware\MultiUser']);
 $prefix = \Config::get('lfm.prefix', 'blackboard/administration/panels/create/ppo-filemanager');
 $as = 'unisharp.lfm.';
-$namespace = '\Powerplanetonline\Ppofilemanager\controllers';
+$namespace = '\Powerplanetonline\PpoFilemanager\controllers';
 
 // make sure authenticated
 Route::group(compact('middleware', 'prefix', 'as', 'namespace'), function () {

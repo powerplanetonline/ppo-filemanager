@@ -1,6 +1,6 @@
 <?php
 
-namespace Powerplanetonline\Ppofilemanager\Events;
+namespace Powerplanetonline\PpoFilemanager\Events;
 
 class ImageWasRenamed
 {

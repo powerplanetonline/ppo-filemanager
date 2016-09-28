@@ -1,4 +1,4 @@
-<?php namespace Powerplanetonline\Ppofilemanager\controllers;
+<?php namespace Powerplanetonline\PpoFilemanager\controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

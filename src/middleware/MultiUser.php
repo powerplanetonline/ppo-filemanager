@@ -1,6 +1,6 @@
 <?php 
 
-namespace Powerplanetonline\Ppofilemanager\middleware;
+namespace Powerplanetonline\PpoFilemanager\middleware;
 
 use Closure;
 

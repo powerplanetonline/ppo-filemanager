@@ -1,7 +1,7 @@
-<?php namespace Powerplanetonline\Ppofilemanager\controllers;
+<?php namespace Powerplanetonline\PpoFilemanager\controllers;
 
 use Illuminate\Support\Facades\Event;
-use Powerplanetonline\Ppofilemanager\controllers\Controller;
+use Powerplanetonline\PpoFilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
@@ -9,11 +9,11 @@ use Illuminate\Support\Str;
 use Lang;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Powerplanetonline\Ppofilemanager\Events\ImageWasUploaded;
+use Powerplanetonline\PpoFilemanager\Events\ImageWasUploaded;
 
 /**
  * Class UploadController
- * @package Powerplanetonline\Ppofilemanager\controllers
+ * @package Powerplanetonline\PpoFilemanager\controllers
  */
 class UploadController extends LfmController {
 

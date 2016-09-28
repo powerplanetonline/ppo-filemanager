@@ -1,13 +1,13 @@
-<?php namespace Powerplanetonline\Ppofilemanager\controllers;
+<?php namespace Powerplanetonline\PpoFilemanager\controllers;
 
-use Powerplanetonline\Ppofilemanager\controllers\Controller;
+use Powerplanetonline\PpoFilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 
 /**
  * Class ItemsController
- * @package Powerplanetonline\Ppofilemanager\controllers
+ * @package Powerplanetonline\PpoFilemanager\controllers
  */
 class ItemsController extends LfmController {
 
