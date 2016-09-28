@@ -1,6 +1,6 @@
-<?php namespace Unisharp\Laravelfilemanager\controllers;
+<?php namespace Powerplanetonline\Ppofilemanager\controllers;
 
-use Unisharp\Laravelfilemanager\controllers\Controller;
+use Powerplanetonline\Ppofilemanager\controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Config;
@@ -8,7 +8,7 @@ use Lang;
 
 /**
  * Class FolderController
- * @package Unisharp\Laravelfilemanager\controllers
+ * @package Powerplanetonline\Ppofilemanager\controllers
  */
 class FolderController extends LfmController {
 
@@ -27,7 +27,7 @@ class FolderController extends LfmController {
         $lfm_share_path = parent::getFileName($share_path);
         $shared_folders = parent::getDirectories($share_path);
 
-        return view('laravel-filemanager::tree')
+        return view('ppo-filemanager::tree')
             ->with('user_dir', $lfm_user_path['long'])
             ->with('dirs', $user_folders)
             ->with('share_dir', $lfm_share_path['long'])
@@ -47,11 +47,11 @@ class FolderController extends LfmController {
         $path = parent::getPath('directory') . $folder_name;
 
         if (File::exists($path)) {
-            return Lang::get('laravel-filemanager::lfm.error-folder-exist');
+            return Lang::get('ppo-filemanager::lfm.error-folder-exist');
         } elseif (empty($folder_name)) {
-            return Lang::get('laravel-filemanager::lfm.error-folder-name');
+            return Lang::get('ppo-filemanager::lfm.error-folder-name');
         } elseif (Config::get('lfm.alphanumeric_directory') && preg_match('/[^\w-]/i', $folder_name)) {
-            return Lang::get('laravel-filemanager::lfm.error-folder-alnum');
+            return Lang::get('ppo-filemanager::lfm.error-folder-alnum');
         } else {
             File::makeDirectory($path, $mode = 0777, true, true);
             return 'OK';

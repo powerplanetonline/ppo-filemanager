@@ -1,7 +1,7 @@
-<?php namespace Unisharp\Laravelfilemanager\controllers;
+<?php namespace Powerplanetonline\Ppofilemanager\controllers;
 
 use Illuminate\Support\Facades\Event;
-use Unisharp\Laravelfilemanager\controllers\Controller;
+use Powerplanetonline\Ppofilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
@@ -9,11 +9,11 @@ use Illuminate\Support\Str;
 use Lang;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Unisharp\Laravelfilemanager\Events\ImageWasUploaded;
+use Powerplanetonline\Ppofilemanager\Events\ImageWasUploaded;
 
 /**
  * Class UploadController
- * @package Unisharp\Laravelfilemanager\controllers
+ * @package Powerplanetonline\Ppofilemanager\controllers
  */
 class UploadController extends LfmController {
 
@@ -31,7 +31,7 @@ class UploadController extends LfmController {
         try {
             $res = $this->uploadValidator();
             if (true !== $res) {
-                return Lang::get('laravel-filemanager::lfm.error-invalid');
+                return Lang::get('ppo-filemanager::lfm.error-invalid');
             }
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -44,7 +44,7 @@ class UploadController extends LfmController {
         $dest_path = parent::getPath('directory');
 
         if (File::exists($dest_path . $new_filename)) {
-            return Lang::get('laravel-filemanager::lfm.error-file-exist');
+            return Lang::get('ppo-filemanager::lfm.error-file-exist');
         }
 
         $file->move($dest_path, $new_filename);
@@ -73,12 +73,12 @@ class UploadController extends LfmController {
         $file = Input::file('upload');
 
         if (empty($file)) {
-            throw new \Exception(Lang::get('laravel-filemanager::lfm.error-file-empty'));
+            throw new \Exception(Lang::get('ppo-filemanager::lfm.error-file-empty'));
         } elseif (!$file instanceof UploadedFile) {
-            throw new \Exception(Lang::get('laravel-filemanager::lfm.error-instance'));
+            throw new \Exception(Lang::get('ppo-filemanager::lfm.error-instance'));
         } elseif ($file->getError() == UPLOAD_ERR_INI_SIZE) {
             $max_size = ini_get('upload_max_filesize');
-            throw new \Exception(Lang::get('laravel-filemanager::lfm.error-file-size', ['max' => $max_size]));
+            throw new \Exception(Lang::get('ppo-filemanager::lfm.error-file-size', ['max' => $max_size]));
         } elseif ($file->getError() != UPLOAD_ERR_OK) {
             dd('File failed to upload. Error code: ' . $file->getError());
         }
@@ -102,7 +102,7 @@ class UploadController extends LfmController {
         }
 
         if (false === $is_valid) {
-            throw new \Exception(Lang::get('laravel-filemanager::lfm.error-mime') . $mimetype);
+            throw new \Exception(Lang::get('ppo-filemanager::lfm.error-mime') . $mimetype);
         }
         return $is_valid;
     }

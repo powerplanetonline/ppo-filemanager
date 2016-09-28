@@ -1,7 +1,7 @@
 <div class="col-sm-4 col-md-3 col-lg-2">
   <div class="thumbnail text-center" data-id="{{ $dir_name['long'] }}">
     <a data-id="{{ $dir_name['long'] }}" class="folder-icon pointer folder-item">
-      <img src="{{ asset('vendor/laravel-filemanager/img/folder.png') }}" style='max-height:200px;'>
+      <img src="{{ asset('vendor/ppo-filemanager/img/folder.png') }}" style='max-height:200px;'>
     </a>
   </div>
   <div class="caption text-center">
@@ -14,8 +14,8 @@
         <span class="sr-only">Toggle Dropdown</span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="javascript:rename('{{ $dir_name['short'] }}')"><i class="fa fa-edit fa-fw"></i> {{ Lang::get('laravel-filemanager::lfm.menu-rename') }}</a></li>
-        <li><a href="javascript:trash('{{ $dir_name['short'] }}')"><i class="fa fa-trash fa-fw"></i> {{ Lang::get('laravel-filemanager::lfm.menu-delete') }}</a></li>
+        <li><a href="javascript:rename('{{ $dir_name['short'] }}')"><i class="fa fa-edit fa-fw"></i> {{ Lang::get('ppo-filemanager::lfm.menu-rename') }}</a></li>
+        <li><a href="javascript:trash('{{ $dir_name['short'] }}')"><i class="fa fa-trash fa-fw"></i> {{ Lang::get('ppo-filemanager::lfm.menu-delete') }}</a></li>
       </ul>
     </div>
 

@@ -12,25 +12,25 @@ return [
     'use_package_routes'    => true,
 
     // For laravel 5.2, please set to ['web', 'auth']
-    'middlewares'           => ['auth'],
+    'middlewares'           => ['auth','web'],
 
     // Add prefix for routes
-    'prefix'           => 'laravel-filemanager',
+    'prefix'           => 'blackboard/administration/panels/create/ppo-filemanager',
 
     // Allow multi_user mode or not.
-    // If true, laravel-filemanager create private folders for each signed-in user.
-    'allow_multi_user'      => true,
+    // If true, ppo-filemanager create private folders for each signed-in user.
+    'allow_multi_user'      => false,
 
     // The database field to identify a user.
     // When set to 'id', the private folder will be named as the user id.
     // NOTE: make sure to use an unique field.
-    'user_field'            => 'id',
+    'user_field'            => 'Auth::user()->id',
 
-    'shared_folder_name'    => 'shares',
+    'shared_folder_name'    => '',
     'thumb_folder_name'     => 'thumbs',
 
-    'images_dir'            => 'public/photos/',
-    'images_url'            => '/photos/',
+    'images_dir'            => 'public/assets/img/app/icons',
+    'images_url'            => '/assets/img/app/icons/',
 
     'files_dir'             => 'public/files/',
     'files_url'             => '/files/',
@@ -44,7 +44,7 @@ return [
     ],
 
     // available since v1.3.0
-    // only when '/laravel-filemanager?type=Files'
+    // only when '/ppo-filemanager?type=Files'
     'valid_file_mimetypes' => [
         'image/jpeg',
         'image/pjpeg',

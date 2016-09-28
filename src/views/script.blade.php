@@ -6,7 +6,7 @@ var image_url     = "{{ asset(Config::get('lfm.images_url')) }}";
 var file_url      = "{{ asset(Config::get('lfm.files_url')) }}";
 
 $(document).ready(function () {
-  bootbox.setDefaults({locale:"{{ Lang::get('laravel-filemanager::lfm.locale-bootbox') }}"});
+  bootbox.setDefaults({locale:"{{ Lang::get('ppo-filemanager::lfm.locale-bootbox') }}"});
   // load folders
   loadFolders();
   loadItems();
@@ -31,7 +31,7 @@ $('#to-previous').click(function () {
 });
 
 $('#add-folder').click(function () {
-  bootbox.prompt("{{ Lang::get('laravel-filemanager::lfm.message-name') }}", function (result) {
+  bootbox.prompt("{{ Lang::get('ppo-filemanager::lfm.message-name') }}", function (result) {
     if (result !== null) {
       createFolder(result);
     }
@@ -46,13 +46,13 @@ $('#upload-btn').click(function () {
   };
 
   function showRequest(formData, jqForm, options) {
-    $('#upload-btn').html('<i class="fa fa-refresh fa-spin"></i> {{ Lang::get("laravel-filemanager::lfm.btn-uploading") }}');
+    $('#upload-btn').html('<i class="fa fa-refresh fa-spin"></i> {{ Lang::get("ppo-filemanager::lfm.btn-uploading") }}');
     return true;
   }
 
   function showResponse(responseText, statusText, xhr, $form)  {
     $('#uploadModal').modal('hide');
-    $('#upload-btn').html('{{ Lang::get("laravel-filemanager::lfm.btn-upload") }}');
+    $('#upload-btn').html('{{ Lang::get("ppo-filemanager::lfm.btn-upload") }}');
     if (responseText != 'OK'){
       notify(responseText);
     }
@@ -61,13 +61,13 @@ $('#upload-btn').click(function () {
   }
 
   function showError(jqXHR, textStatus, errorThrown) {
-    $('#upload-btn').html('{{ Lang::get("laravel-filemanager::lfm.btn-upload") }}');
+    $('#upload-btn').html('{{ Lang::get("ppo-filemanager::lfm.btn-upload") }}');
     if (jqXHR.status == 413) {
-      notify('{{ Lang::get("laravel-filemanager::lfm.error-too-large") }}');
+      notify('{{ Lang::get("ppo-filemanager::lfm.error-too-large") }}');
     } else if (textStatus == 'error') {
-      notify('{{ Lang::get("laravel-filemanager::lfm.error-other") }}' + errorThrown);
+      notify('{{ Lang::get("ppo-filemanager::lfm.error-other") }}' + errorThrown);
     } else {
-      notify('{{ Lang::get("laravel-filemanager::lfm.error-other") }}' + textStatus + '<br>' + errorThrown);
+      notify('{{ Lang::get("ppo-filemanager::lfm.error-other") }}' + textStatus + '<br>' + errorThrown);
     }
   }
 
@@ -182,7 +182,7 @@ function createFolder(folder_name) {
 
 function rename(item_name) {
   bootbox.prompt({
-    title: "{{ Lang::get('laravel-filemanager::lfm.message-rename') }}",
+    title: "{{ Lang::get('ppo-filemanager::lfm.message-rename') }}",
     value: item_name,
     callback: function (result) {
       if (result !== null) {
@@ -211,7 +211,7 @@ function rename(item_name) {
 }
 
 function trash(item_name) {
-  bootbox.confirm("{{ Lang::get('laravel-filemanager::lfm.message-delete') }}", function (result) {
+  bootbox.confirm("{{ Lang::get('ppo-filemanager::lfm.message-delete') }}", function (result) {
     if (result == true) {
       $.ajax({
         type: 'GET',

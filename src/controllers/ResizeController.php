@@ -1,6 +1,6 @@
-<?php namespace Unisharp\Laravelfilemanager\controllers;
+<?php namespace Powerplanetonline\Ppofilemanager\controllers;
 
-use Unisharp\Laravelfilemanager\controllers\Controller;
+use Powerplanetonline\Ppofilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\View;
@@ -8,7 +8,7 @@ use Intervention\Image\Facades\Image;
 
 /**
  * Class ResizeController
- * @package Unisharp\Laravelfilemanager\controllers
+ * @package Powerplanetonline\Ppofilemanager\controllers
  */
 class ResizeController extends LfmController {
 
@@ -45,7 +45,7 @@ class ResizeController extends LfmController {
             $scaled = true;
         }
 
-        return View::make('laravel-filemanager::resize')
+        return View::make('ppo-filemanager::resize')
             ->with('img', parent::getUrl('directory') . $image)
             ->with('height', number_format($height, 0))
             ->with('width', $width)

@@ -1,6 +1,6 @@
-<?php namespace Unisharp\Laravelfilemanager\controllers;
+<?php namespace Powerplanetonline\Ppofilemanager\controllers;
 
-use Unisharp\Laravelfilemanager\controllers\Controller;
+use Powerplanetonline\Ppofilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\View;
@@ -8,7 +8,7 @@ use Intervention\Image\Facades\Image;
 
 /**
  * Class CropController
- * @package Unisharp\Laravelfilemanager\controllers
+ * @package Powerplanetonline\Ppofilemanager\controllers
  */
 class CropController extends LfmController {
 
@@ -22,7 +22,7 @@ class CropController extends LfmController {
         $working_dir = Input::get('working_dir');
         $img = parent::getUrl('directory') . Input::get('img');
 
-        return View::make('laravel-filemanager::crop')
+        return View::make('ppo-filemanager::crop')
             ->with(compact('working_dir', 'img'));
     }
 

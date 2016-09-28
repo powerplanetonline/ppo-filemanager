@@ -1,13 +1,13 @@
-<?php namespace Unisharp\Laravelfilemanager\controllers;
+<?php namespace Powerplanetonline\Ppofilemanager\controllers;
 
-use Unisharp\Laravelfilemanager\controllers\Controller;
+use Powerplanetonline\Ppofilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 
 /**
  * Class DownloadController
- * @package Unisharp\Laravelfilemanager\controllers
+ * @package Powerplanetonline\Ppofilemanager\controllers
  */
 class DownloadController extends LfmController {
 

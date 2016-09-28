@@ -1,4 +1,4 @@
-<?php namespace Unisharp\Laravelfilemanager;
+<?php namespace Powerplanetonline\Ppofilemanager;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;
@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Config;
 
 /**
  * Class LaravelFilemanagerServiceProvider
- * @package Unisharp\Laravelfilemanager
+ * @package Powerplanetonline\Ppofilemanager
  */
 class LaravelFilemanagerServiceProvider extends ServiceProvider {
 
@@ -20,20 +20,20 @@ class LaravelFilemanagerServiceProvider extends ServiceProvider {
         if (Config::get('lfm.use_package_routes'))
             include __DIR__ . '/routes.php';
 
-        $this->loadTranslationsFrom(__DIR__.'/lang', 'laravel-filemanager');
+        $this->loadTranslationsFrom(__DIR__.'/lang', 'ppo-filemanager');
 
-        $this->loadViewsFrom(__DIR__.'/views', 'laravel-filemanager');
+        $this->loadViewsFrom(__DIR__.'/views', 'ppo-filemanager');
 
         $this->publishes([
             __DIR__ . '/config/lfm.php' => base_path('config/lfm.php'),
         ], 'lfm_config');
 
-        $this->publishes([      
-            __DIR__.'/../public' => public_path('vendor/laravel-filemanager'),     
+        $this->publishes([
+            __DIR__.'/../public' => public_path('vendor/ppo-filemanager'),
         ], 'lfm_public');
 
         $this->publishes([
-            __DIR__.'/views'  => base_path('resources/views/vendor/laravel-filemanager'),
+            __DIR__.'/views'  => base_path('resources/views/vendor/ppo-filemanager'),
         ], 'lfm_view');
     }
 
@@ -44,7 +44,7 @@ class LaravelFilemanagerServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app['laravel-filemanager'] = $this->app->share(function ()
+        $this->app['ppo-filemanager'] = $this->app->share(function ()
         {
             return true;
         });

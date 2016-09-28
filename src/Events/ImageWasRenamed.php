@@ -1,6 +1,6 @@
 <?php
 
-namespace Unisharp\Laravelfilemanager\Events;
+namespace Powerplanetonline\Ppofilemanager\Events;
 
 class ImageWasRenamed
 {

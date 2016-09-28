@@ -1,11 +1,11 @@
 ## Documents
 
-  1. [Installation](https://github.com/UniSharp/laravel-filemanager/blob/master/doc/installation.md)
-  1. [Integration](https://github.com/UniSharp/laravel-filemanager/blob/master/doc/integration.md)
-  1. [Config](https://github.com/UniSharp/laravel-filemanager/blob/master/doc/config.md)
-  1. [Customization](https://github.com/UniSharp/laravel-filemanager/blob/master/doc/customization.md)
-  1. [Events](https://github.com/UniSharp/laravel-filemanager/blob/master/doc/events.md)
-  1. [Upgrade](https://github.com/UniSharp/laravel-filemanager/blob/master/doc/upgrade.md)
+  1. [Installation](https://github.com/UniSharp/ppo-filemanager/blob/master/doc/installation.md)
+  1. [Integration](https://github.com/UniSharp/ppo-filemanager/blob/master/doc/integration.md)
+  1. [Config](https://github.com/UniSharp/ppo-filemanager/blob/master/doc/config.md)
+  1. [Customization](https://github.com/UniSharp/ppo-filemanager/blob/master/doc/customization.md)
+  1. [Events](https://github.com/UniSharp/ppo-filemanager/blob/master/doc/events.md)
+  1. [Upgrade](https://github.com/UniSharp/ppo-filemanager/blob/master/doc/upgrade.md)
 
 ## WYSIWYG Editor Integration:
 ### Option 1: CKEditor
@@ -20,10 +20,10 @@
 <textarea id="my-editor" name="content" class="form-control">{!! old('content', 'test editor content') !!}</textarea>
 <script>
   CKEDITOR.replace( 'my-editor', {
-    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
-    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+    filebrowserImageBrowseUrl: '/ppo-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/ppo-filemanager/upload?type=Images&_token={{csrf_token()}}',
+    filebrowserBrowseUrl: '/ppo-filemanager?type=Files',
+    filebrowserUploadUrl: '/ppo-filemanager/upload?type=Files&_token={{csrf_token()}}'
   });
 </script>
 ```
@@ -37,10 +37,10 @@
 <textarea name="content" class="form-control my-editor">{!! old('content', 'test editor content') !!}</textarea>
 <script>
   $('textarea.my-editor').ckeditor({
-    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
-    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+    filebrowserImageBrowseUrl: '/ppo-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/ppo-filemanager/upload?type=Images&_token={{csrf_token()}}',
+    filebrowserBrowseUrl: '/ppo-filemanager?type=Files',
+    filebrowserUploadUrl: '/ppo-filemanager/upload?type=Files&_token={{csrf_token()}}'
   });
 </script>
 ```
@@ -66,7 +66,7 @@
       var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
       var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
 
-      var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
+      var cmsURL = editor_config.path_absolute + 'ppo-filemanager?field_name=' + field_name;
       if (type == 'image') {
         cmsURL = cmsURL + "&type=Images";
       } else {
@@ -111,7 +111,7 @@ If you are going to use filemanager independently, meaning set the value of an i
 1. Import lfm.js(run `php artisan vendor:publish` if you need).
 
 ```javascript
-    <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+    <script src="/vendor/ppo-filemanager/js/lfm.js"></script>
 ```
 
 1. Init filemanager with type. (requires jQuery)

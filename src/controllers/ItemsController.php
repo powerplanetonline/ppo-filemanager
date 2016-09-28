@@ -1,13 +1,13 @@
-<?php namespace Unisharp\Laravelfilemanager\controllers;
+<?php namespace Powerplanetonline\Ppofilemanager\controllers;
 
-use Unisharp\Laravelfilemanager\controllers\Controller;
+use Powerplanetonline\Ppofilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 
 /**
  * Class ItemsController
- * @package Unisharp\Laravelfilemanager\controllers
+ * @package Powerplanetonline\Ppofilemanager\controllers
  */
 class ItemsController extends LfmController {
 
@@ -82,9 +82,9 @@ class ItemsController extends LfmController {
     private function getView()
     {
         if (Input::get('show_list') == 1) {
-            return 'laravel-filemanager::list-view';
+            return 'ppo-filemanager::list-view';
         } else {
-            return 'laravel-filemanager::grid-view';
+            return 'ppo-filemanager::grid-view';
         }
     }
 }

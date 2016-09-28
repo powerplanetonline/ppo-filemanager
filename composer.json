@@ -1,5 +1,5 @@
 {
-  "name": "unisharp/laravel-filemanager",
+  "name": "powerplanetonline/ppo-filemanager",
   "description": "A file upload/editor intended for use with Laravel 5 and CKEditor / TinyMCE",
   "license": "MIT",
   "keywords": [
@@ -14,12 +14,12 @@
   ],
   "authors": [
     {
-      "name": "Trevor Sawler",
-      "email": "trevor.sawler@gmail.com"
+      "name": "Alberto Iniesta Gil",
+      "email": "alberto.iniesta@powerplanetonline.com"
     },
     {
-      "name": "UniSharp Ltd.",
-      "email": "unisharp-service@unisharp.com"
+      "name": "PowerPlanetOnline",
+      "email": "it@powerplanetonline.com"
     }
   ],
   "require": {

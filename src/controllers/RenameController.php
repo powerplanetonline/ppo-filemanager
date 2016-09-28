@@ -1,18 +1,18 @@
-<?php namespace Unisharp\Laravelfilemanager\controllers;
+<?php namespace Powerplanetonline\Ppofilemanager\controllers;
 
 use Illuminate\Support\Facades\Event;
-use Unisharp\Laravelfilemanager\controllers\Controller;
+use Powerplanetonline\Ppofilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
 use Lang;
-use Unisharp\Laravelfilemanager\Events\ImageWasRenamed;
-use Unisharp\Laravelfilemanager\Events\FolderWasRenamed;
+use Powerplanetonline\Ppofilemanager\Events\ImageWasRenamed;
+use Powerplanetonline\Ppofilemanager\Events\FolderWasRenamed;
 
 /**
  * Class RenameController
- * @package Unisharp\Laravelfilemanager\controllers
+ * @package Powerplanetonline\Ppofilemanager\controllers
  */
 class RenameController extends LfmController {
 
@@ -37,9 +37,9 @@ class RenameController extends LfmController {
         $new_file = $file_path . $new_name;
 
         if (Config::get('lfm.alphanumeric_directory') && preg_match('/[^\w-]/i', $new_name)) {
-            return Lang::get('laravel-filemanager::lfm.error-folder-alnum');
+            return Lang::get('ppo-filemanager::lfm.error-folder-alnum');
         } elseif (File::exists($new_file)) {
-            return Lang::get('laravel-filemanager::lfm.error-rename');
+            return Lang::get('ppo-filemanager::lfm.error-rename');
         }
 
         if (File::isDirectory($old_file)) {

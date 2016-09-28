@@ -1,8 +1,8 @@
 <?php
-$middleware = array_merge(\Config::get('lfm.middlewares'), ['\Unisharp\Laravelfilemanager\middleware\MultiUser']);
-$prefix = \Config::get('lfm.prefix', 'laravel-filemanager');
+$middleware = array_merge(\Config::get('lfm.middlewares'), ['\Powerplanetonline\Ppofilemanager\middleware\MultiUser']);
+$prefix = \Config::get('lfm.prefix', 'blackboard/administration/panels/create/ppo-filemanager');
 $as = 'unisharp.lfm.';
-$namespace = '\Unisharp\Laravelfilemanager\controllers';
+$namespace = '\Powerplanetonline\Ppofilemanager\controllers';
 
 // make sure authenticated
 Route::group(compact('middleware', 'prefix', 'as', 'namespace'), function () {
@@ -78,6 +78,6 @@ Route::group(compact('middleware', 'prefix', 'as', 'namespace'), function () {
     ]);
 
     Route::get('/demo', function () {
-        return view('laravel-filemanager::demo');
+        return view('ppo-filemanager::demo');
     });
 });

@@ -45,10 +45,10 @@
   <script>
     $('textarea[name=ce]').ckeditor({
       height: 100,
-      filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-      filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
-      filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-      filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+      filebrowserImageBrowseUrl: '/ppo-filemanager?type=Images',
+      filebrowserImageUploadUrl: '/ppo-filemanager/upload?type=Images&_token={{csrf_token()}}',
+      filebrowserBrowseUrl: '/ppo-filemanager?type=Files',
+      filebrowserUploadUrl: '/ppo-filemanager/upload?type=Files&_token={{csrf_token()}}'
     });
   </script>
 
@@ -70,7 +70,7 @@
         var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
         var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
 
-        var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
+        var cmsURL = editor_config.path_absolute + 'ppo-filemanager?field_name=' + field_name;
         if (type == 'image') {
           cmsURL = cmsURL + "&type=Images";
         } else {
@@ -91,7 +91,7 @@
     tinymce.init(editor_config);
   </script>
 
-  <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+  <script src="/vendor/ppo-filemanager/js/lfm.js"></script>
   <script>
     $('#lfm').filemanager('image');
   </script>

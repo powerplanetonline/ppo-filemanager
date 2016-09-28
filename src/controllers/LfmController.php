@@ -1,13 +1,13 @@
-<?php namespace Unisharp\Laravelfilemanager\controllers;
+<?php namespace Powerplanetonline\Ppofilemanager\controllers;
 
-use Unisharp\Laravelfilemanager\controllers\Controller;
+use Powerplanetonline\Ppofilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 
 /**
  * Class LfmController
- * @package Unisharp\Laravelfilemanager\controllers
+ * @package Powerplanetonline\Ppofilemanager\controllers
  */
 class LfmController extends Controller {
 
@@ -53,7 +53,7 @@ class LfmController extends Controller {
 
         $extension_not_found = ! extension_loaded('gd') && ! extension_loaded('imagick');
 
-        return view('laravel-filemanager::index')
+        return view('ppo-filemanager::index')
             ->with('working_dir', $working_dir)
             ->with('file_type', $this->file_type)
             ->with('extension_not_found', $extension_not_found);

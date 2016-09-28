@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ Lang::get('laravel-filemanager::lfm.title-page') }}</title>
+  <title>{{ Lang::get('ppo-filemanager::lfm.title-page') }}</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/cropper.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('/vendor/laravel-filemanager/css/lfm.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/ppo-filemanager/css/cropper.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/vendor/ppo-filemanager/css/lfm.css') }}">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <div class="row fill">
       <div class="panel panel-primary fill">
         <div class="panel-heading">
-          <h3 class="panel-title">{{ Lang::get('laravel-filemanager::lfm.title-panel') }}</h3>
+          <h3 class="panel-title">{{ Lang::get('ppo-filemanager::lfm.title-panel') }}</h3>
         </div>
         <div class="panel-body fill">
           <div class="row fill">
@@ -27,7 +27,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     @if($extension_not_found)
-                    <div class="alert alert-warning"><i class="glyphicon glyphicon-exclamation-sign"></i> {{ Lang::get('laravel-filemanager::lfm.message-extension_not_found') }}</div>
+                    <div class="alert alert-warning"><i class="glyphicon glyphicon-exclamation-sign"></i> {{ Lang::get('ppo-filemanager::lfm.message-extension_not_found') }}</div>
                     @endif
                     <nav class="navbar navbar-default">
                       <div class="container-fluid">
@@ -43,29 +43,29 @@
                           <ul class="nav navbar-nav" id="nav-buttons">
                             <li>
                               <a href="#" id="to-previous">
-                                <i class="fa fa-arrow-left"></i> {{ Lang::get('laravel-filemanager::lfm.nav-back') }}
+                                <i class="fa fa-arrow-left"></i> {{ Lang::get('ppo-filemanager::lfm.nav-back') }}
                               </a>
                             </li>
                             <li><a style='cursor:default;'>|</a></li>
                             <li>
                               <a href="#" id="add-folder">
-                                <i class="fa fa-plus"></i> {{ Lang::get('laravel-filemanager::lfm.nav-new') }}
+                                <i class="fa fa-plus"></i> {{ Lang::get('ppo-filemanager::lfm.nav-new') }}
                               </a>
                             </li>
                             <li>
                               <a href="#" id="upload" data-toggle="modal" data-target="#uploadModal">
-                                <i class="fa fa-upload"></i> {{ Lang::get('laravel-filemanager::lfm.nav-upload') }}
+                                <i class="fa fa-upload"></i> {{ Lang::get('ppo-filemanager::lfm.nav-upload') }}
                               </a>
                             </li>
                             <li><a style='cursor:default;'>|</a></li>
                             <li>
                               <a href="#" id="thumbnail-display">
-                                <i class="fa fa-picture-o"></i> {{ Lang::get('laravel-filemanager::lfm.nav-thumbnails') }}
+                                <i class="fa fa-picture-o"></i> {{ Lang::get('ppo-filemanager::lfm.nav-thumbnails') }}
                               </a>
                             </li>
                             <li>
                               <a href="#" id="list-display">
-                                <i class="fa fa-list"></i> {{ Lang::get('laravel-filemanager::lfm.nav-list') }}
+                                <i class="fa fa-list"></i> {{ Lang::get('ppo-filemanager::lfm.nav-list') }}
                               </a>
                             </li>
                           </ul>
@@ -106,12 +106,12 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aia-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">{{ Lang::get('laravel-filemanager::lfm.title-upload') }}</h4>
+          <h4 class="modal-title" id="myModalLabel">{{ Lang::get('ppo-filemanager::lfm.title-upload') }}</h4>
         </div>
         <div class="modal-body">
           <form action="{{ route('unisharp.lfm.upload') }}" role='form' id='uploadForm' name='uploadForm' method='post' enctype='multipart/form-data'>
             <div class="form-group" id="attachment">
-              <label for='upload' class='control-label'>{{ Lang::get('laravel-filemanager::lfm.message-choose') }}</label>
+              <label for='upload' class='control-label'>{{ Lang::get('ppo-filemanager::lfm.message-choose') }}</label>
               <div class="controls">
                 <div class="input-group" style="width: 100%">
                   <input type="file" id="upload" name="upload">
@@ -125,8 +125,8 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">{{ Lang::get('laravel-filemanager::lfm.btn-close') }}</button>
-          <button type="button" class="btn btn-primary" id="upload-btn">{{ Lang::get('laravel-filemanager::lfm.btn-upload') }}</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{ Lang::get('ppo-filemanager::lfm.btn-close') }}</button>
+          <button type="button" class="btn btn-primary" id="upload-btn">{{ Lang::get('ppo-filemanager::lfm.btn-upload') }}</button>
         </div>
       </div>
     </div>
@@ -137,13 +137,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="fileLabel">{{ Lang::get('laravel-filemanager::lfm.title-view') }}</h4>
+          <h4 class="modal-title" id="fileLabel">{{ Lang::get('ppo-filemanager::lfm.title-view') }}</h4>
         </div>
         <div class="modal-body" id="fileview_body">
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">{{ Lang::get('laravel-filemanager::lfm.btn-close') }}</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{ Lang::get('ppo-filemanager::lfm.btn-close') }}</button>
         </div>
       </div>
     </div>
@@ -154,8 +154,8 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-  <script src="{{ asset('vendor/laravel-filemanager/js/cropper.min.js') }}"></script>
-  <script src="{{ asset('vendor/laravel-filemanager/js/jquery.form.min.js') }}"></script>
-  @include('laravel-filemanager::script')
+  <script src="{{ asset('vendor/ppo-filemanager/js/cropper.min.js') }}"></script>
+  <script src="{{ asset('vendor/ppo-filemanager/js/jquery.form.min.js') }}"></script>
+  @include('ppo-filemanager::script')
 </body>
 </html>

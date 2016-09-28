@@ -1,16 +1,16 @@
-<?php namespace Unisharp\Laravelfilemanager\controllers;
+<?php namespace Powerplanetonline\Ppofilemanager\controllers;
 
 use Illuminate\Support\Facades\Event;
-use Unisharp\Laravelfilemanager\controllers\Controller;
+use Powerplanetonline\Ppofilemanager\controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Lang;
-use Unisharp\Laravelfilemanager\Events\ImageWasDeleted;
+use Powerplanetonline\Ppofilemanager\Events\ImageWasDeleted;
 
 /**
  * Class CropController
- * @package Unisharp\Laravelfilemanager\controllers
+ * @package Powerplanetonline\Ppofilemanager\controllers
  */
 class DeleteController extends LfmController {
 
@@ -34,7 +34,7 @@ class DeleteController extends LfmController {
 
         if (File::isDirectory($file_to_delete)) {
             if (sizeof(File::files($file_to_delete)) != 0) {
-                return Lang::get('laravel-filemanager::lfm.error-delete');
+                return Lang::get('ppo-filemanager::lfm.error-delete');
             }
 
             File::deleteDirectory($file_to_delete);
