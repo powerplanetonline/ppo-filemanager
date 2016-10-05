@@ -26,12 +26,19 @@ class LfmController extends Controller {
     {
         $this->file_type = Input::get('type', 'Images'); // default set to Images.
 
-        if ('Images' === $this->file_type) {
+
+        /*if ('Images' === $this->file_type) {
             $this->dir_location = Config::get('lfm.images_url');
             $this->file_location = Config::get('lfm.images_dir');
         } elseif ('Files' === $this->file_type) {
             $this->dir_location = Config::get('lfm.files_url');
             $this->file_location = Config::get('lfm.files_dir');
+        } else {
+            throw new \Exception('unexpected type parameter');
+        }*/
+        if ('Images' === $this->file_type || 'Files' === $this->file_type) {
+            $this->dir_location = Input::get('path');
+            $this->file_location = Input::get('path');
         } else {
             throw new \Exception('unexpected type parameter');
         }

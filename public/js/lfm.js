@@ -1,6 +1,6 @@
 (function( $ ){
 
-    $.fn.filemanager = function(type) {
+    $.fn.filemanager = function(path,type) {
         type = type || 'image';
 
         if (type === 'image' || type === 'images') {
@@ -15,7 +15,7 @@
         this.on('click', function(e) {
             localStorage.setItem('target_input', input_id);
             localStorage.setItem('target_preview', preview_id);
-            window.open('/blackboard/administration/panels/create/ppo-filemanager?type=' + type, 'FileManager', 'width=900,height=600');
+            window.open('/blackboard/administration/panels/create/ppo-filemanager?path='+path+'&type=' + type, 'FileManager', 'width=900,height=600');
             return false;
         });
     }
