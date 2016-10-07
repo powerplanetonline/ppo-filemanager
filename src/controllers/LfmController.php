@@ -22,30 +22,29 @@ class LfmController extends Controller {
     /**
      * Constructor
      */
-    public function __construct()
-    {
-        $this->file_type = Input::get('type', 'Images'); // default set to Images.
+     public function __construct()
+     {
+         $this->file_type = Input::get('type', 'Files'); // default set to Images.
+         $path = Input::get('path', 'Images');
+         /*if ('Images' === $this->file_type) {
+             $this->dir_location = Config::get('lfm.images_url');
+             $this->file_location = Config::get('lfm.images_dir');
+         } elseif ('Files' === $this->file_type) {
+             $this->dir_location = Config::get('lfm.files_url');
+             $this->file_location = Config::get('lfm.files_dir');
+         } else {
+             throw new \Exception('unexpected type parameter');
+         }*/
+         if ('Images' === $this->file_type || 'Files' === $this->file_type) {
+             $this->dir_location = public_path($path);
+             $this->file_location = $path;
+         } else {
+             throw new \Exception('unexpected type parameter');
+         }
 
-
-        /*if ('Images' === $this->file_type) {
-            $this->dir_location = Config::get('lfm.images_url');
-            $this->file_location = Config::get('lfm.images_dir');
-        } elseif ('Files' === $this->file_type) {
-            $this->dir_location = Config::get('lfm.files_url');
-            $this->file_location = Config::get('lfm.files_dir');
-        } else {
-            throw new \Exception('unexpected type parameter');
-        }*/
-        if ('Images' === $this->file_type || 'Files' === $this->file_type) {
-            $this->dir_location = Input::get('path');
-            $this->file_location = Input::get('path');
-        } else {
-            throw new \Exception('unexpected type parameter');
-        }
-
-        $this->checkDefaultFolderExists('user');
-        $this->checkDefaultFolderExists('share');
-    }
+         $this->checkDefaultFolderExists('user');
+         $this->checkDefaultFolderExists('share');
+     }
 
 
     /**
